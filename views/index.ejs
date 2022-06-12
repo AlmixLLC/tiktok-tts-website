@@ -1,53 +1,89 @@
-<!-- originally this was on a static webhost (hince why it's not built into the express server) -->
-<!-- originally this was on a static webhost (hince why it's not built into the express server) -->
-<!-- originally this was on a static webhost (hince why it's not built into the express server) -->
-<!-- originally this was on a static webhost (hince why it's not built into the express server) -->
-<form action="http://localhost:3000/v1/tts" method="post">
-    <!-- 300 is max limit, changing this to a higher value will just make tiktok go brrr lol (Thank you Audizign for pointing this out) -->
-    <textarea maxlength="300" placeholder="Put whatever here, Emoji and Unicode characters are not supported" class="textarea" name="stuff"></textarea>
-    <br>
-    <!-- if these values are changed in tiktok, they will spit out empty mp3 files x.x -->
-    <div class="select">
-    <select name="voices" id="voices">
-    <option value="en_us_001">English US - Female (Int. 1) (default)</option>
-    <option value="en_us_002">English US - Female (Int. 2)</option>
-    <option value="en_us_006">English US - Male 1</option>
-    <option value="en_us_007">English US - Male 2</option>
-    <option value="en_us_009">English US - Male 3</option>
-    <option value="en_us_010">English US - Male 4</option>
-    <option value="en_au_001">English AU - Female</option>
-    <option value="en_au_002">English AU - Male</option>
-    <option value="en_uk_001">English UK - Male 1</option>
-    <option value="en_uk_003">English UK - Male 2</option>
-    <option value="fr_001">French - Male 1</option>
-    <option value="fr_002">French - Male 2</option>
-    <option value="de_001">German - Female</option>
-    <option value="de_002">German - Male</option>
-    <option value="es_002">Spanish - Male</option>
-    <option value="es_mx_002">Spanish MX - Male</option>
-    <option value="br_001">Portuguese BR - Female 1</option>
-    <option value="br_003">Portuguese BR - Female 2</option>
-    <option value="br_004">Portuguese BR - Female 3</option>
-    <option value="br_005">Portuguese BR - Male</option>
-    <option value="id_001">Indonesian - Female</option>
-    <option value="jp_001">Japanese - Female 1</option>
-    <option value="jp_003">Japanese - Female 2</option>
-    <option value="jp_005">Japanese - Female 3</option>
-    <option value="jp_006">Japanese - Male</option>
-    <option value="kr_002">Korean - Male 1</option>
-    <option value="kr_003">Korean - Female</option>
-    <option value="kr_004">Korean - Male 2</option>
-    <option value="en_us_ghostface">Ghost Face</option>
-    <option value="en_us_chewbacca">Chewbacca</option>
-    <option value="en_us_c3po">C3PO</option>
-    <option value="en_us_stitch">Stitch</option>
-    <option value="en_us_stormtrooper">Stormtrooper</option>
-    <option value="en_us_rocket">Rocket</option>
-    <option value="en_female_f08_salut_damour">Alto - singing voice</option>
-    <option value="en_male_m03_lobby">Tenor - singing voice	</option>
-    </select>
-    </div>	
-    <br>
-    <br>
-    <input type="submit" class="button is-primary" value="Download">
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS &bullet; Almix</title>
+    
+    <link rel="stylesheet" href="https://almix.net/css/main.css">
+</head>
+<body>
+    <section class="hero is-black is-medium">
+       
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-2 head">
+                    TikTok TTS Generator
+                </h1>
+                <p class="subtitle sub">
+                    Generate ANY text to speech with this.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="almix-section">
+        <div class="container">
+            <div class="box">
+                <form action="http://localhost:5000/v1/tts" method="post">
+					<!-- 300 is max limit, changing this to a higher value will just make tiktok go brrr lol (Thank you Audizign for pointing this out) -->
+                    <textarea maxlength="300" placeholder="Put whatever here, Emoji and Unicode characters are not supported" class="textarea" name="stuff"></textarea>
+                    <br>
+                    <!-- if these values are changed in tiktok, they will spit out empty mp3 files x.x -->
+					<div class="select">
+					<select name="voices" id="voices">
+					<option value="en_us_001">English US - Female (Int. 1) (default)</option>
+					<option value="en_us_002">English US - Female (Int. 2)</option>
+					<option value="en_us_006">English US - Male 1</option>
+					<option value="en_us_007">English US - Male 2</option>
+					<option value="en_us_009">English US - Male 3</option>
+					<option value="en_us_010">English US - Male 4</option>
+					<option value="en_au_001">English AU - Female</option>
+					<option value="en_au_002">English AU - Male</option>
+					<option value="en_uk_001">English UK - Male 1</option>
+					<option value="en_uk_003">English UK - Male 2</option>
+					<option value="fr_001">French - Male 1</option>
+					<option value="fr_002">French - Male 2</option>
+					<option value="de_001">German - Female</option>
+					<option value="de_002">German - Male</option>
+					<option value="es_002">Spanish - Male</option>
+					<option value="es_mx_002">Spanish MX - Male</option>
+					<option value="br_001">Portuguese BR - Female 1</option>
+					<option value="br_003">Portuguese BR - Female 2</option>
+					<option value="br_004">Portuguese BR - Female 3</option>
+					<option value="br_005">Portuguese BR - Male</option>
+					<option value="id_001">Indonesian - Female</option>
+					<option value="jp_001">Japanese - Female 1</option>
+					<option value="jp_003">Japanese - Female 2</option>
+					<option value="jp_005">Japanese - Female 3</option>
+					<option value="jp_006">Japanese - Male</option>
+					<option value="kr_002">Korean - Male 1</option>
+					<option value="kr_003">Korean - Female</option>
+					<option value="kr_004">Korean - Male 2</option>
+					<option value="en_us_ghostface">Ghost Face</option>
+					<option value="en_us_chewbacca">Chewbacca</option>
+					<option value="en_us_c3po">C3PO</option>
+					<option value="en_us_stitch">Stitch</option>
+					<option value="en_us_stormtrooper">Stormtrooper</option>
+					<option value="en_us_rocket">Rocket</option>
+					<option value="en_female_f08_salut_damour">Alto - singing voice</option>
+					<option value="en_male_m03_lobby">Tenor - singing voice	</option>
+					</select>
+					</div>	
+					<br>
+					<br>
+					<!-- <label class="checkbox">
+					<input type="checkbox">
+					<a class="has-text-white">I agree to the </a><a target="_blank" href="/terms">terms and conditions</a>
+					</label>
+					<br>
+					<br> -->
+                    <input type="submit" class="button is-primary" value="Download">
+                </form>
+            </div>
+        </div>
+        <p class="sub is-white has-text-centered">View the source on <a href="https://github.com/AlmixLLC/tiktok-tts-website">Github</a><br><br></p>
+    </div>
+</body>
+</html>
